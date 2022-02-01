@@ -1,0 +1,59 @@
+const Sequelize = require('sequelize');
+module.exports = function(sequelize, DataTypes) {
+  return sequelize.define('clients_take_services', {
+    id: {
+      autoIncrement: true,
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true
+    },
+    id_client: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'clients',
+        key: 'id'
+      }
+    },
+    id_service: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'services',
+        key: 'id'
+      }
+    },
+    paid: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    }
+  }, {
+    sequelize,
+    tableName: 'clients_take_services',
+    timestamps: false,
+    indexes: [
+      {
+        name: "PRIMARY",
+        unique: true,
+        using: "BTREE",
+        fields: [
+          { name: "id" },
+        ]
+      },
+      {
+        name: "fk_clients_clients_take_services_idx",
+        using: "BTREE",
+        fields: [
+          { name: "id_client" },
+        ]
+      },
+      {
+        name: "fk_services_clients_take_services_idx",
+        using: "BTREE",
+        fields: [
+          { name: "id_service" },
+        ]
+      },
+    ]
+  });
+};
