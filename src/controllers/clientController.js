@@ -1,5 +1,9 @@
-var client = require('../models/clients');
+const Client = require("../models/clients");
+const Sequelize = require('sequelize');
 
-exports.client_list = function(req,res){
-    res.send('Test')
+var DataTypes = require("sequelize").DataTypes;
+console.log("bruh")
+
+exports.index = function(req, res){
+    Client.findAll().then((value)=>{res.status(200).json(JSON.stringify(value))}).catch(()=>res.status("502"));
 }

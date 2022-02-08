@@ -1,6 +1,7 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('clients', {
+const Db = require('../Db')
+const { DataTypes } = require('sequelize');
+const sequelize = Db.getDatabase() ;
+const Client = sequelize.define('clients', {
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
@@ -61,4 +62,4 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
-};
+  module.exports = Client;
