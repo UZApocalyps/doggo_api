@@ -1,9 +1,22 @@
 const Client = require("../models/clients");
-const Sequelize = require('sequelize');
 
-var DataTypes = require("sequelize").DataTypes;
-console.log("bruh")
+exports.clients = function (req, res) {
 
-exports.allClients = function(req, res){
-    Client.findAll().then((value)=>{res.status(200).json(JSON.stringify(value))}).catch(()=>res.status("502"));
+    let clients = Client.findAll();
+    res.send()
+}
+exports.details = function (req, res) {
+    res.send('NOT IMPLEMENTED: Book detail: ' + req.params.id)
+}
+
+exports.update = function (req, res) {
+
+}
+
+exports.create = function (req, res) {
+
+}
+
+exports.delete = function (req, res) {
+
 }
