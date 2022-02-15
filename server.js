@@ -7,6 +7,8 @@ const port = 3000;
 // Routers
 const consultationsRouter = require("./src/routes/consultationsRouter");
 
+app.use(express.json()); // In order to parse requests json body
+
 app.use("/", consultationsRouter);
 
 app.listen(port, () => {
