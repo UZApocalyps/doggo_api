@@ -7,6 +7,7 @@ const clientRouter = require('./src/routes/clientRouter');
 const db = require('./src/Db');
 const { route } = require('./src/routes/clientRouter');
 
+app.use(express.json()); // In order to parse requests json body
 
 app.use('/', clientRouter);
 // app.use('/dog', dogRouter);
