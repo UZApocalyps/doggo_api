@@ -5,9 +5,9 @@ const app = express();
 const port = 3000;
 
 // Routers
-const consultationRouter = require("./src/routes/consultationRouter");
+const consultationsRouter = require("./src/routes/consultationsRouter");
 
-app.use("/", consultationRouter);
+app.use("/", consultationsRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
