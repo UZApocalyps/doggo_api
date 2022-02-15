@@ -22,4 +22,4 @@ git clone https://github.com/gabrielrossier/doggo_api.git
 npm start
 ```
 
-The API can now be accessed in `http://localhost:3000`.
+The API can now be accessed using `http://localhost:3000` on your browser.
