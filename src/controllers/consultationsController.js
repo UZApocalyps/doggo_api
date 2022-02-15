@@ -40,15 +40,7 @@ exports.getById = async (req, res) => {
  */
 exports.create = async (req, res) => {
   try {
-    const consultation = await Consultation.create({
-      situation: req.body.situation,
-      goal: req.body.goal,
-      deadline: req.body.deadline,
-      solution: req.body.solution,
-      medicines: req.body.medicines,
-      argumentation: req.body.argumentation,
-      id_service: req.body.id_service,
-    });
+    const consultation = await Consultation.create(req.body);
 
     res.status(201).json(consultation);
   } catch (e) {

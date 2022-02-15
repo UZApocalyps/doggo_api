@@ -1,4 +1,4 @@
-const Client = require("../models/clients");
+const Client = require("../models/Client");
 
 exports.clients = async function (req, res) {
   const clients = await Client.findAll();
@@ -19,7 +19,9 @@ exports.update = async function (req, res) {
       let response = await client.save();
       res.send(response.dataValues);
     }
-  } catch (error) {res.status(400).send(error.message);}
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
 };
 
 exports.create = async function (req, res) {
@@ -32,13 +34,13 @@ exports.create = async function (req, res) {
 };
 
 exports.delete = async function (req, res) {
-    try {
-        await Client.destroy({
-            where: {
-              id: req.params.id,
-            },
-          });
-    } catch (error) {
-        res.status(500).send(error.message);
-    }
+  try {
+    await Client.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
 };
