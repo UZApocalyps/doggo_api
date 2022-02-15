@@ -83,3 +83,20 @@ exports.update = async (req, res) => {
     res.status(404).json({ error: "An error occured." });
   }
 };
+
+/**
+ * Delete a consultation
+ * @param {*} req
+ * @param {*} res
+ */
+exports.delete = async (req, res) => {
+  const id = req.params.id;
+
+  try {
+    const consultation = await Consultation.destroy({ where: { id: id } });
+
+    res.status(204).json(consultation);
+  } catch (e) {
+    res.status(404).json({ error: "An error occured." });
+  }
+};
