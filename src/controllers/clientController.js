@@ -1,12 +1,16 @@
 const Client = require("../models/clients");
 
-exports.clients = function (req, res) {
+exports.clients = async function (req, res) {
 
-    let clients = Client.findAll();
-    res.send()
+    let clients = await Client.findAll();
+
+    res.send(clients)
 }
-exports.details = function (req, res) {
-    res.send('NOT IMPLEMENTED: Book detail: ' + req.params.id)
+exports.details = async function (req, res) {
+
+    const client = await Client.findByPk(1);
+    
+    res.send(JSON.stringify(client))
 }
 
 exports.update = function (req, res) {
