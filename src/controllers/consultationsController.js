@@ -25,6 +25,8 @@ exports.getById = async (req, res) => {
     const id = req.params.id;
     const consultation = await Consultation.findByPk(id);
 
+    if (!consultation) throw new Error("An error occured.");
+
     res.status(200).json(consultation);
   } catch (e) {
     res.status(404).json({ error: "An error occured." });
