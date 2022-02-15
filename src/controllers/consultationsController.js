@@ -1,5 +1,10 @@
 const Consultation = require("../models/Consultation");
 
+/**
+ * Get all the consultations
+ * @param {*} req
+ * @param {*} res
+ */
 exports.getAll = async (req, res) => {
   try {
     const consultations = await Consultation.findAll();
@@ -10,6 +15,11 @@ exports.getAll = async (req, res) => {
   }
 };
 
+/**
+ * Get a consultation by id
+ * @param {*} req
+ * @param {*} res
+ */
 exports.getById = async (req, res) => {
   try {
     const id = req.params.id;
@@ -21,6 +31,11 @@ exports.getById = async (req, res) => {
   }
 };
 
+/**
+ * Create a new consultation
+ * @param {*} req
+ * @param {*} res
+ */
 exports.create = async (req, res) => {
   try {
     const consultation = await Consultation.create({
