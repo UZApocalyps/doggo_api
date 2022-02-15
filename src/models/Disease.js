@@ -1,53 +1,58 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('diseases', {
+const Db = require("../Db");
+const { DataTypes } = require("sequelize");
+const sequelize = Db.getDatabase();
+
+const Disease = sequelize.define(
+  "Disease",
+  {
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
     },
     noun: {
       type: DataTypes.STRING(45),
-      allowNull: false
+      allowNull: false,
     },
     description: {
       type: DataTypes.STRING(2500),
-      allowNull: false
+      allowNull: false,
     },
     symptoms: {
       type: DataTypes.STRING(1000),
-      allowNull: false
+      allowNull: false,
     },
     preventive: {
       type: DataTypes.STRING(2000),
-      allowNull: false
+      allowNull: false,
     },
     curative: {
       type: DataTypes.STRING(2000),
-      allowNull: false
+      allowNull: false,
     },
     vaccinable: {
       type: DataTypes.BOOLEAN,
-      allowNull: false
+      allowNull: false,
     },
     zoonosis: {
       type: DataTypes.BOOLEAN,
-      allowNull: false
-    }
-  }, {
+      allowNull: false,
+    },
+  },
+  {
     sequelize,
-    tableName: 'diseases',
+    tableName: "diseases",
     timestamps: false,
     indexes: [
       {
         name: "PRIMARY",
         unique: true,
         using: "BTREE",
-        fields: [
-          { name: "id" },
-        ]
+        fields: [{ name: "id" }],
       },
-    ]
-  });
-};
+    ],
+  }
+);
+
+module.exports = Disease;

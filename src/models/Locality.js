@@ -1,49 +1,54 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('localities', {
+const Db = require("../Db");
+const { DataTypes } = require("sequelize");
+const sequelize = Db.getDatabase();
+
+const Locality = sequelize.define(
+  "Locality",
+  {
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
     },
     noun: {
       type: DataTypes.STRING(45),
-      allowNull: false
+      allowNull: false,
     },
     zip: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
     },
     zip_complement: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
     },
     toponym: {
       type: DataTypes.STRING(45),
-      allowNull: false
+      allowNull: false,
     },
     department: {
       type: DataTypes.STRING(2),
-      allowNull: false
+      allowNull: false,
     },
     language: {
       type: DataTypes.STRING(2),
-      allowNull: false
-    }
-  }, {
+      allowNull: false,
+    },
+  },
+  {
     sequelize,
-    tableName: 'localities',
+    tableName: "localities",
     timestamps: false,
     indexes: [
       {
         name: "PRIMARY",
         unique: true,
         using: "BTREE",
-        fields: [
-          { name: "id" },
-        ]
+        fields: [{ name: "id" }],
       },
-    ]
-  });
-};
+    ],
+  }
+);
+
+module.exports = Locality;

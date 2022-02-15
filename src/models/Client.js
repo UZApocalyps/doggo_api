@@ -1,65 +1,67 @@
-const Db = require('../Db')
-const { DataTypes } = require('sequelize');
-const sequelize = Db.getDatabase() ;
-const Client = sequelize.define('clients', {
+const Db = require("../Db");
+const { DataTypes } = require("sequelize");
+const sequelize = Db.getDatabase();
+
+const Client = sequelize.define(
+  "Client",
+  {
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
     },
     firstname: {
       type: DataTypes.STRING(100),
-      allowNull: false
+      allowNull: false,
     },
     lastname: {
       type: DataTypes.STRING(100),
-      allowNull: false
+      allowNull: false,
     },
     female: {
       type: DataTypes.BOOLEAN,
-      allowNull: false
+      allowNull: false,
     },
     email: {
       type: DataTypes.STRING(255),
-      allowNull: true
+      allowNull: true,
     },
     phone: {
       type: DataTypes.STRING(15),
-      allowNull: false
+      allowNull: false,
     },
     street: {
       type: DataTypes.STRING(255),
-      allowNull: true
+      allowNull: true,
     },
     id_locality: {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: 'localities',
-        key: 'id'
-      }
-    }
-  }, {
+        model: "localities",
+        key: "id",
+      },
+    },
+  },
+  {
     sequelize,
-    tableName: 'clients',
+    tableName: "clients",
     timestamps: false,
     indexes: [
       {
         name: "PRIMARY",
         unique: true,
         using: "BTREE",
-        fields: [
-          { name: "id" },
-        ]
+        fields: [{ name: "id" }],
       },
       {
         name: "fk_clients_localities_idx",
         using: "BTREE",
-        fields: [
-          { name: "id_locality" },
-        ]
+        fields: [{ name: "id_locality" }],
       },
-    ]
-  });
-  module.exports = Client;
+    ],
+  }
+);
+
+module.exports = Client;
