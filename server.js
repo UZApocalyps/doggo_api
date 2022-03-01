@@ -8,12 +8,14 @@ const port = 3000;
 const consultationsRouter = require("./src/routes/consultationsRouter");
 const clientRouter = require("./src/routes/clientRouter");
 const diseasesRouter = require("./src/routes/diseasesRouter");
+const dogRouter = require("./src/routes/dogRouter");
 
 app.use(express.json()); // In order to parse requests json body
 
 app.use("/consultations", consultationsRouter);
-app.use("/client", clientRouter);
 app.use("/diseases", diseasesRouter);
+app.use("/clients", clientRouter);
+app.use("/dogs", dogRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
