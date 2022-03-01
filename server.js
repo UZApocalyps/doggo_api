@@ -14,6 +14,7 @@ const diseasesRouter = require("./src/routes/diseasesRouter");
 const dogRouter = require("./src/routes/dogRouter");
 const categoriesRouter = require("./src/routes/categoriesRouter");
 const breedRouter = require("./src/routes/breedRouter");
+const servicesRouter = require("./src/routes/servicesRouter");
 
 app.use("/doc", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
@@ -25,6 +26,7 @@ app.use("/clients", clientRouter);
 app.use("/dogs", dogRouter);
 app.use("/categories", categoriesRouter);
 app.use("/breeds", breedRouter);
+app.use("/services", servicesRouter);
 
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
