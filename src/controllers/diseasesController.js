@@ -57,20 +57,7 @@ exports.update = async (req, res) => {
   const id = req.params.id;
 
   try {
-    const disease = await Disease.update(
-      {
-        noun: req.body.noun,
-        description: req.body.description,
-        symptoms: req.body.symptoms,
-        preventive: req.body.preventive,
-        curative: req.body.curative,
-        vaccinable: req.body.vaccinable,
-        zoonosis: req.body.zoonosis,
-      },
-      {
-        where: { id: id },
-      }
-    );
+    const disease = await Disease.update(req.body, { where: { id: id } });
 
     res.status(200).json(disease);
   } catch (e) {
