@@ -1,14 +1,18 @@
-require('dotenv').config()
-const express = require('express')
-const app = express()
-const port = 3000
+require("dotenv").config();
+require("./src/models/init-models");
+const express = require("express");
+const app = express();
+const port = 3000;
 
-const db = require('./src/Db')
+// Routers
+const consultationsRouter = require("./src/routes/consultationsRouter");
+const clientRouter = require("./src/routes/clientRouter");
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.use(express.json()); // In order to parse requests json body
+
+app.use("/consultations", consultationsRouter);
+app.use("/client", clientRouter);
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+  console.log(`Example app listening on port ${port}`);
+});
