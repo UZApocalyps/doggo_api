@@ -1,22 +1,22 @@
-const Client = require("../models/Client");
+const Dog = require("../models/Dog");
 
-exports.clients = async function (req, res) {
-  const clients = await Client.findAll();
-  res.send(clients);
+exports.dogs = async function (req, res) {
+  const dogs = await Dog.findAll();
+  res.send(dogs);
 };
 exports.details = async function (req, res) {
-  const client = await Client.findByPk(req.params.id);
-  if (!client) res.status(404).send("Client not found");
+  const dog = await Dog.findByPk(req.params.id);
+  if (!dog) res.status(404).send("Dog not found");
   else res.send(response.dataValues);
 };
 
 exports.update = async function (req, res) {
   try {
-    const client = await Client.findByPk(req.params.id);
-    if (!client) throw new Error("Client not found");
+    const dog = await Dog.findByPk(req.params.id);
+    if (!dog) throw new Error("Dog not found");
     else {
-      client.set(req.body);
-      let response = await client.save();
+      dog.set(req.body);
+      let response = await dog.save();
       res.send(response.dataValues);
     }
   } catch (error) {
@@ -26,8 +26,8 @@ exports.update = async function (req, res) {
 
 exports.create = async function (req, res) {
   try {
-    const client = await Client.create(req.body);
-    res.send(client);
+    const dog = await Dog.create(req.body);
+    res.send(dog);
   } catch (error) {
     res.status(400).send(error.message);
   }
@@ -35,7 +35,7 @@ exports.create = async function (req, res) {
 
 exports.delete = async function (req, res) {
   try {
-    await Client.destroy({
+    await Dog.destroy({
       where: {
         id: req.params.id,
       },

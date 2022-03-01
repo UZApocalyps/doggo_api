@@ -1,22 +1,22 @@
-const Client = require("../models/Client");
+const Breed = require("../models/Breed");
 
-exports.clients = async function (req, res) {
-  const clients = await Client.findAll();
-  res.send(clients);
+exports.breeds = async function (req, res) {
+  const breeds = await Breed.findAll();
+  res.send(breeds);
 };
 exports.details = async function (req, res) {
-  const client = await Client.findByPk(req.params.id);
-  if (!client) res.status(404).send("Client not found");
+  const breed = await Breed.findByPk(req.params.id);
+  if (!breed) res.status(404).send("Breed not found");
   else res.send(response.dataValues);
 };
 
 exports.update = async function (req, res) {
   try {
-    const client = await Client.findByPk(req.params.id);
-    if (!client) throw new Error("Client not found");
+    const breed = await Breed.findByPk(req.params.id);
+    if (!breed) throw new Error("Breed not found");
     else {
-      client.set(req.body);
-      let response = await client.save();
+      breed.set(req.body);
+      let response = await breed.save();
       res.send(response.dataValues);
     }
   } catch (error) {
@@ -26,8 +26,8 @@ exports.update = async function (req, res) {
 
 exports.create = async function (req, res) {
   try {
-    const client = await Client.create(req.body);
-    res.send(client);
+    const breed = await Breed.create(req.body);
+    res.send(breed);
   } catch (error) {
     res.status(400).send(error.message);
   }
@@ -35,7 +35,7 @@ exports.create = async function (req, res) {
 
 exports.delete = async function (req, res) {
   try {
-    await Client.destroy({
+    await Breed.destroy({
       where: {
         id: req.params.id,
       },

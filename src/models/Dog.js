@@ -1,98 +1,97 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('dogs', {
+const Db = require("../Db");
+const { DataTypes } = require("sequelize");
+const sequelize = Db.getDatabase();
+
+const Dog = sequelize.define(
+  "Dog",
+  {
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
     },
     noun: {
       type: DataTypes.STRING(100),
-      allowNull: false
+      allowNull: false,
     },
     female: {
       type: DataTypes.BOOLEAN,
-      allowNull: false
+      allowNull: false,
     },
     birthdate: {
       type: DataTypes.DATEONLY,
-      allowNull: false
+      allowNull: false,
     },
     sterilized: {
       type: DataTypes.BOOLEAN,
-      allowNull: false
+      allowNull: false,
     },
     chemical: {
       type: DataTypes.BOOLEAN,
-      allowNull: false
+      allowNull: false,
     },
     color: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
     },
     dead: {
       type: DataTypes.BOOLEAN,
-      allowNull: false
+      allowNull: false,
     },
     id_client: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'clients',
-        key: 'id'
-      }
+        model: "clients",
+        key: "id",
+      },
     },
     breed: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'breeds',
-        key: 'id'
-      }
+        model: "breeds",
+        key: "id",
+      },
     },
     crossbreed: {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: 'breeds',
-        key: 'id'
-      }
-    }
-  }, {
+        model: "breeds",
+        key: "id",
+      },
+    },
+  },
+  {
     sequelize,
-    tableName: 'dogs',
+    tableName: "dogs",
     timestamps: false,
     indexes: [
       {
         name: "PRIMARY",
         unique: true,
         using: "BTREE",
-        fields: [
-          { name: "id" },
-        ]
+        fields: [{ name: "id" }],
       },
       {
         name: "fk_dogs_clients_idx",
         using: "BTREE",
-        fields: [
-          { name: "id_client" },
-        ]
+        fields: [{ name: "id_client" }],
       },
       {
         name: "fk_dogs_breeds_idx",
         using: "BTREE",
-        fields: [
-          { name: "breed" },
-        ]
+        fields: [{ name: "breed" }],
       },
       {
         name: "fk_dogs_crossbreeds_idx",
         using: "BTREE",
-        fields: [
-          { name: "crossbreed" },
-        ]
+        fields: [{ name: "crossbreed" }],
       },
-    ]
-  });
-};
+    ],
+  }
+);
+
+module.exports = Dog;

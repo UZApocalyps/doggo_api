@@ -1,15 +1,15 @@
 var DataTypes = require("sequelize").DataTypes;
-var _breeds = require("./breeds");
-var _categories = require("./categories");
-var _clients = require("./clients");
-var _clients_take_services = require("./clients_take_services");
+var _breeds = require("./Breed");
+var _categories = require("./Category");
+var _clients = require("./Client");
+var _clients_take_services = require("./ClientTakeServices");
 var _consultations = require("./Consultation");
-var _diseases = require("./diseases");
-var _dogs = require("./dogs");
-var _dogs_have_diseases = require("./dogs_have_diseases");
-var _dogs_have_services = require("./dogs_have_services");
-var _localities = require("./localities");
-var _services = require("./services");
+var _diseases = require("./Disease");
+var _dogs = require("./Dog");
+var _dogs_have_diseases = require("./DogHasDiseases");
+var _dogs_have_services = require("./DogHasServices");
+var _localities = require("./Locality");
+var _services = require("./Service");
 
 function initModels(sequelize) {
   var breeds = _breeds(sequelize, DataTypes);
