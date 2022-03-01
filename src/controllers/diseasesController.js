@@ -47,3 +47,33 @@ exports.create = async (req, res) => {
     res.status(500).json({ error: "An error occured." });
   }
 };
+
+/**
+ * Update a disease
+ * @param {*} req
+ * @param {*} res
+ */
+exports.update = async (req, res) => {
+  const id = req.params.id;
+
+  try {
+    const disease = await Disease.update(
+      {
+        noun: req.body.noun,
+        description: req.body.description,
+        symptoms: req.body.symptoms,
+        preventive: req.body.preventive,
+        curative: req.body.curative,
+        vaccinable: req.body.vaccinable,
+        zoonosis: req.body.zoonosis,
+      },
+      {
+        where: { id: id },
+      }
+    );
+
+    res.status(200).json(disease);
+  } catch (e) {
+    res.status(404).json({ error: "An error occured." });
+  }
+};
