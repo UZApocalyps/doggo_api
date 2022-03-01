@@ -9,6 +9,7 @@ const consultationsRouter = require("./src/routes/consultationsRouter");
 const clientRouter = require("./src/routes/clientRouter");
 const diseasesRouter = require("./src/routes/diseasesRouter");
 const dogRouter = require("./src/routes/dogRouter");
+const categoriesRouter = require("./src/routes/categoriesRouter");
 
 app.use(express.json()); // In order to parse requests json body
 
@@ -16,6 +17,7 @@ app.use("/consultations", consultationsRouter);
 app.use("/diseases", diseasesRouter);
 app.use("/clients", clientRouter);
 app.use("/dogs", dogRouter);
+app.use("/categories", categoriesRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
