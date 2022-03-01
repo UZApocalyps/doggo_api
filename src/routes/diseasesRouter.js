@@ -5,5 +5,6 @@ var diseasesController = require("../controllers/diseasesController");
 
 router.get("/", diseasesController.getAll);
 router.get("/:id", diseasesController.getById);
+router.post("/", diseasesController.create);
 
 module.exports = router;

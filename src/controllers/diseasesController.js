@@ -32,3 +32,18 @@ exports.getById = async (req, res) => {
     res.status(404).json({ error: "An error occured." });
   }
 };
+
+/**
+ * Create a new disease
+ * @param {*} req
+ * @param {*} res
+ */
+exports.create = async (req, res) => {
+  try {
+    const disease = await Disease.create(req.body);
+
+    res.status(201).json(disease);
+  } catch (e) {
+    res.status(500).json({ error: "An error occured." });
+  }
+};
