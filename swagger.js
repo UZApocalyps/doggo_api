@@ -102,6 +102,116 @@ const doc = {
       max_weight_male: 6,
       life_expectancy: 13,
     },
+    Categories: [{ id: 1, noun: "Chiens de berger et de bouvier" }],
+    Category: { id: 1, noun: "Chiens de berger et de bouvier" },
+    Consultations: [
+      {
+        id: 1,
+        situation:
+          "Le chien est peureux et fait des agressions défensives (humain/chien). Il fait également des agressions de distancement (humain/chien) en vue de se protéger ainsi que sa propriétaire. Le chien a un sentiment de possession/contrôle sur sa propriétaire. Il prend du Clomicalme depuis 2 ans à trop faible dosage.",
+        goal:
+          "Comprendre les raisons. Mieux savoir gérer les situations et diminuer les agressions sur les humains.",
+        deadline: "Ca prendra le temps qu'il faudra.",
+        solution:
+          "J. DeHasse recommande d'arrêter le clomicalme et de commencer un traitement test d'hormones thyroïdiennes. Pour le comportement, rediriger l'agression sur le promeneur avec une séquence d'exercices. De plus, on réduira ou supprimera les rations de nourriture 'gratuite' afin de les distribuer durant les exercices de redirection.",
+        medicines: "Hormones thyroïdiennes et vitamine D3",
+        argumentation:
+          "Le Clomiclame est un médicament qui diminue l'agressivité mais qui ne fait rien contre la peur. De plus, il est mal dosé (1mg/10kg au lieu de 4mg). De plus, le chien présentant 5 points sur le tests de l'hypothyroïdie. Supprimer le clomicalme et le remplacer par des hormones thyroïdiennes pourrait améliorer l'équilibre émotionnel du chien. Cependant, la médication seule ne suffit pas pour améliorer la situation vis-à-vis des agressions. De plus car le chien a pris plaisir à le faire. Il se sent moins mal et à moins peur en persécutant les autres. Afin de rediriger les agressions, on demandera au chien de regarder le promeneur et, une fois l'attention du chien pris, continuer par des exercices ludiques et motivants avec récompense. Le but étant de donner la ration journalière de nourriture durant ses exercices. De cette manière, on arrivera à augmenter la motivation ainsi que la durée des exercices. Le but final étant de créer un reflexe chez le chien. Au lieu d'agresser lorsqu'il verra des gens, il aura envie de travailler avec le promeneur. Ce reflexe pourra être atteint dès 7 jours si aucun échec mais devra être maintenu au minimum durant 6 semaines afin d'être installé au niveau cérébral. Ce nouveau rituel sera ensuite installé et devra être poursuivi afin que le chien ne redirige pas ce rituel vers autre chose à nouveau.",
+        id_service: 1,
+      },
+    ],
+    Consultation: {
+      id: 1,
+      situation:
+        "Le chien est peureux et fait des agressions défensives (humain/chien). Il fait également des agressions de distancement (humain/chien) en vue de se protéger ainsi que sa propriétaire. Le chien a un sentiment de possession/contrôle sur sa propriétaire. Il prend du Clomicalme depuis 2 ans à trop faible dosage.",
+      goal:
+        "Comprendre les raisons. Mieux savoir gérer les situations et diminuer les agressions sur les humains.",
+      deadline: "Ca prendra le temps qu'il faudra.",
+      solution:
+        "J. DeHasse recommande d'arrêter le clomicalme et de commencer un traitement test d'hormones thyroïdiennes. Pour le comportement, rediriger l'agression sur le promeneur avec une séquence d'exercices. De plus, on réduira ou supprimera les rations de nourriture 'gratuite' afin de les distribuer durant les exercices de redirection.",
+      medicines: "Hormones thyroïdiennes et vitamine D3",
+      argumentation:
+        "Le Clomiclame est un médicament qui diminue l'agressivité mais qui ne fait rien contre la peur. De plus, il est mal dosé (1mg/10kg au lieu de 4mg). De plus, le chien présentant 5 points sur le tests de l'hypothyroïdie. Supprimer le clomicalme et le remplacer par des hormones thyroïdiennes pourrait améliorer l'équilibre émotionnel du chien. Cependant, la médication seule ne suffit pas pour améliorer la situation vis-à-vis des agressions. De plus car le chien a pris plaisir à le faire. Il se sent moins mal et à moins peur en persécutant les autres. Afin de rediriger les agressions, on demandera au chien de regarder le promeneur et, une fois l'attention du chien pris, continuer par des exercices ludiques et motivants avec récompense. Le but étant de donner la ration journalière de nourriture durant ses exercices. De cette manière, on arrivera à augmenter la motivation ainsi que la durée des exercices. Le but final étant de créer un reflexe chez le chien. Au lieu d'agresser lorsqu'il verra des gens, il aura envie de travailler avec le promeneur. Ce reflexe pourra être atteint dès 7 jours si aucun échec mais devra être maintenu au minimum durant 6 semaines afin d'être installé au niveau cérébral. Ce nouveau rituel sera ensuite installé et devra être poursuivi afin que le chien ne redirige pas ce rituel vers autre chose à nouveau.",
+      id_service: 1,
+    },
+    Diseases: [
+      {
+        id: 1,
+        noun: "Anémie du chien",
+        description:
+          "L’anémie chez le chien est une pathologie due à la baisse du taux sanguin d’hémoglobine.\n\nCette insuffisance de globule rouge entraine une mauvaise libération de l’oxygène dans l’organisme.\n\nOn distingue 2 types d’anémie :\n\nL’anémie non régénérative consécutive à une baisse de production d’hémoglobine, provoquée soit par une affection de la moelle osseuse, une affection systémique (insuffisance rénale, insuffisance immunitaire, problème de thyroïde …etc.) ou encore un déficit en fer, protéines ou vitamine B12.\nL’anémie régénérative due à une destruction des globules rouges et provoquée par soit une hémorragie, une infestation de parasites, un ulcère de l’intestin, une inflammation du système immunitaire, une tumeur sanglante d’un organe, une intervention chirurgicale, un traumatisme ou une ingestion de produit toxique.\n\nTrès important : En cas de moindre doute, allez consulter votre vétérinaire rapidement.",
+        symptoms:
+          "Perte de poids\nManque d’appétit\nAbattement\nPouls faible\nFatigue inhabituelle\nPâleur des muqueuses de la bouche, des yeux, des parties génitales\nRalentissement du rythme cardiaque\nRalentissement de la fréquence respiratoire",
+        preventive:
+          "Il n’y a pas de traitement préventif hormis donner une alimentation très équilibrée en vitamines et protéines ainsi qu’un traitement anti parasitaire régulier afin d’éviter la présence inopportune de parasites, que ce soit sous forme de vermifuge et de solutions externes (collier, pipette).",
+        curative:
+          "Le traitement sera prescrit en fonction de la cause de cette anémie.\n\nUn prélèvement sanguin sera automatiquement effectué afin de déterminer le taux d’hémoglobine et de définir au plus tôt la cause et l’importance de l’anémie.\n\nEn fonction du diagnostic, un traitement soit antiparasitaire, soit antibiotique, soit de soutien lors d’une maladie rénale pourront être prescrit.\n\nDans les cas les moins graves, un rééquilibrage alimentaire sera conseillé avec des compléments alimentaires appropriés.\n\nLe cas d’urgence souvent d’origine hémorragique, sera traité par une transfusion sanguine qui reste une intervention non négligeable et à prendre avec beaucoup de précaution.",
+        vaccinable: false,
+        zoonosis: false,
+      },
+    ],
+    Disease: {
+      id: 1,
+      noun: "Anémie du chien",
+      description:
+        "L’anémie chez le chien est une pathologie due à la baisse du taux sanguin d’hémoglobine.\n\nCette insuffisance de globule rouge entraine une mauvaise libération de l’oxygène dans l’organisme.\n\nOn distingue 2 types d’anémie :\n\nL’anémie non régénérative consécutive à une baisse de production d’hémoglobine, provoquée soit par une affection de la moelle osseuse, une affection systémique (insuffisance rénale, insuffisance immunitaire, problème de thyroïde …etc.) ou encore un déficit en fer, protéines ou vitamine B12.\nL’anémie régénérative due à une destruction des globules rouges et provoquée par soit une hémorragie, une infestation de parasites, un ulcère de l’intestin, une inflammation du système immunitaire, une tumeur sanglante d’un organe, une intervention chirurgicale, un traumatisme ou une ingestion de produit toxique.\n\nTrès important : En cas de moindre doute, allez consulter votre vétérinaire rapidement.",
+      symptoms:
+        "Perte de poids\nManque d’appétit\nAbattement\nPouls faible\nFatigue inhabituelle\nPâleur des muqueuses de la bouche, des yeux, des parties génitales\nRalentissement du rythme cardiaque\nRalentissement de la fréquence respiratoire",
+      preventive:
+        "Il n’y a pas de traitement préventif hormis donner une alimentation très équilibrée en vitamines et protéines ainsi qu’un traitement anti parasitaire régulier afin d’éviter la présence inopportune de parasites, que ce soit sous forme de vermifuge et de solutions externes (collier, pipette).",
+      curative:
+        "Le traitement sera prescrit en fonction de la cause de cette anémie.\n\nUn prélèvement sanguin sera automatiquement effectué afin de déterminer le taux d’hémoglobine et de définir au plus tôt la cause et l’importance de l’anémie.\n\nEn fonction du diagnostic, un traitement soit antiparasitaire, soit antibiotique, soit de soutien lors d’une maladie rénale pourront être prescrit.\n\nDans les cas les moins graves, un rééquilibrage alimentaire sera conseillé avec des compléments alimentaires appropriés.\n\nLe cas d’urgence souvent d’origine hémorragique, sera traité par une transfusion sanguine qui reste une intervention non négligeable et à prendre avec beaucoup de précaution.",
+      vaccinable: false,
+      zoonosis: false,
+    },
+    Dogs: [
+      {
+        id: 2,
+        noun: "Lucas",
+        female: false,
+        birthdate: "2013-06-01",
+        sterilized: true,
+        chemical: false,
+        color: null,
+        dead: false,
+        id_client: 2,
+        breed: 24,
+        crossbreed: 338,
+      },
+    ],
+    Dog: {
+      id: 2,
+      noun: "Lucas",
+      female: false,
+      birthdate: "2013-06-01",
+      sterilized: true,
+      chemical: false,
+      color: null,
+      dead: false,
+      id_client: 2,
+      breed: 24,
+      crossbreed: 338,
+    },
+    Services: [
+      {
+        id: 1,
+        moment: "2019-02-03",
+        duration: 1,
+        type: "Consultation",
+        description: null,
+        street: null,
+        id_locality: 3293,
+      },
+    ],
+    Service: {
+      id: 1,
+      moment: "2019-02-03",
+      duration: 1,
+      type: "Consultation",
+      description: null,
+      street: null,
+      id_locality: 3293,
+    },
   },
 };
 

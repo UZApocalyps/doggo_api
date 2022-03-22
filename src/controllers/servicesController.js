@@ -5,7 +5,11 @@ const Service = require("../models/Service");
  * @param {*} req
  * @param {*} res
  */
-exports.getAll = async (req, res) => {
+exports.services = async (req, res) => {
+  // #swagger.tags = ['Service']
+  /* #swagger.responses[200] = { 
+               schema: { $ref: "#/definitions/Services" },
+  } */
   try {
     const services = await Service.findAll();
 
@@ -20,7 +24,11 @@ exports.getAll = async (req, res) => {
  * @param {*} req
  * @param {*} res
  */
-exports.getById = async (req, res) => {
+exports.details = async (req, res) => {
+  // #swagger.tags = ['Service']
+  /* #swagger.responses[200] = { 
+               schema: { $ref: "#/definitions/Service" },
+  } */
   try {
     const id = req.params.id;
     const service = await Service.findByPk(id);
@@ -39,6 +47,10 @@ exports.getById = async (req, res) => {
  * @param {*} res
  */
 exports.create = async (req, res) => {
+  // #swagger.tags = ['Service']
+  /* #swagger.responses[200] = { 
+               schema: { $ref: "#/definitions/Service" },
+  } */
   try {
     const service = await Service.create(req.body);
 
@@ -54,6 +66,10 @@ exports.create = async (req, res) => {
  * @param {*} res
  */
 exports.update = async (req, res) => {
+  // #swagger.tags = ['Service']
+  /* #swagger.responses[200] = { 
+               schema: { $ref: "#/definitions/Service" },
+  } */
   const id = req.params.id;
 
   try {
@@ -71,6 +87,7 @@ exports.update = async (req, res) => {
  * @param {*} res
  */
 exports.delete = async (req, res) => {
+  // #swagger.tags = ['Service']
   const id = req.params.id;
 
   try {

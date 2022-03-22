@@ -5,7 +5,11 @@ const Category = require("../models/Category");
  * @param {*} req
  * @param {*} res
  */
-exports.getAll = async (req, res) => {
+exports.categories = async (req, res) => {
+  // #swagger.tags = ['Category']
+  /* #swagger.responses[200] = { 
+               schema: { $ref: "#/definitions/Categories" },
+  } */
   try {
     const categories = await Category.findAll();
 
@@ -20,7 +24,12 @@ exports.getAll = async (req, res) => {
  * @param {*} req
  * @param {*} res
  */
-exports.getById = async (req, res) => {
+exports.details = async (req, res) => {
+  // #swagger.tags = ['Category']
+  /* #swagger.responses[200] = { 
+               schema: { $ref: "#/definitions/Category" },
+  } */
+
   try {
     const id = req.params.id;
     const category = await Category.findByPk(id);
@@ -39,6 +48,11 @@ exports.getById = async (req, res) => {
  * @param {*} res
  */
 exports.create = async (req, res) => {
+  // #swagger.tags = ['Category']
+  /* #swagger.responses[200] = { 
+               schema: { $ref: "#/definitions/Categories" },
+  } */
+
   try {
     const category = await Category.create(req.body);
 
@@ -54,6 +68,10 @@ exports.create = async (req, res) => {
  * @param {*} res
  */
 exports.update = async (req, res) => {
+  // #swagger.tags = ['Category']
+  /* #swagger.responses[200] = { 
+               schema: { $ref: "#/definitions/Category" },
+  } */
   const id = req.params.id;
 
   try {
@@ -71,6 +89,8 @@ exports.update = async (req, res) => {
  * @param {*} res
  */
 exports.delete = async (req, res) => {
+  // #swagger.tags = ['Category']
+
   const id = req.params.id;
 
   try {
