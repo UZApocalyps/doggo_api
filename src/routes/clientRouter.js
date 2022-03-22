@@ -6,15 +6,15 @@ var client_controller = require('../controllers/clientController');
 
 /// Client ///
 
-router.get('/', client_controller.clients);
+router.get('/clients/', client_controller.clients);
 
-router.get('/:id',client_controller.details);
+router.get('/clients/:id',client_controller.details);
 
-router.put('/:id',client_controller.update);
+router.put('/clients/:id',client_controller.update);
 
-router.post('/',client_controller.create);
+router.post('/clients/',client_controller.create);
 
-router.delete('/:id',client_controller.delete);
+router.delete('/clients/:id',client_controller.delete);
 
 
 module.exports = router;
