@@ -5,7 +5,7 @@ const swaggerFile = require("./swagger_output.json");
 
 const express = require("express");
 const app = express();
-const port = 80;
+const port = process.env.PORT || 80;
 
 // Routers
 const consultationsRouter = require("./src/routes/consultationsRouter");
