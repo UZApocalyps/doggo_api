@@ -1,55 +1,55 @@
-const Consultation = require("../models/Consultation");
+const Category = require("../models/Category");
 
 /**
- * Get all the consultations
+ * Get all the categories
  * @param {*} req
  * @param {*} res
  */
 exports.getAll = async (req, res) => {
   try {
-    const consultations = await Consultation.findAll();
+    const categories = await Category.findAll();
 
-    res.status(200).json(consultations);
+    res.status(200).json(categories);
   } catch (e) {
     res.status(404).json({ error: "An error occured." });
   }
 };
 
 /**
- * Get a consultation by id
+ * Get a category by id
  * @param {*} req
  * @param {*} res
  */
 exports.getById = async (req, res) => {
   try {
     const id = req.params.id;
-    const consultation = await Consultation.findByPk(id);
+    const category = await Category.findByPk(id);
 
-    if (!consultation) throw new Error("An error occured.");
+    if (!category) throw new Error("An error occured.");
 
-    res.status(200).json(consultation);
+    res.status(200).json(category);
   } catch (e) {
     res.status(404).json({ error: "An error occured." });
   }
 };
 
 /**
- * Create a new consultation
+ * Create a new category
  * @param {*} req
  * @param {*} res
  */
 exports.create = async (req, res) => {
   try {
-    const consultation = await Consultation.create(req.body);
+    const category = await Category.create(req.body);
 
-    res.status(201).json(consultation);
+    res.status(201).json(category);
   } catch (e) {
     res.status(500).json({ error: "An error occured." });
   }
 };
 
 /**
- * Update a consultation
+ * Update a category
  * @param {*} req
  * @param {*} res
  */
@@ -57,18 +57,16 @@ exports.update = async (req, res) => {
   const id = req.params.id;
 
   try {
-    const consultation = await Consultation.update(req.body, {
-      where: { id: id },
-    });
+    const category = await Category.update(req.body, { where: { id: id } });
 
-    res.status(200).json(consultation);
+    res.status(200).json(category);
   } catch (e) {
     res.status(404).json({ error: "An error occured." });
   }
 };
 
 /**
- * Delete a consultation
+ * Delete a category
  * @param {*} req
  * @param {*} res
  */
@@ -76,9 +74,9 @@ exports.delete = async (req, res) => {
   const id = req.params.id;
 
   try {
-    const consultation = await Consultation.destroy({ where: { id: id } });
+    const category = await Category.destroy({ where: { id: id } });
 
-    res.status(204).json(consultation);
+    res.status(204).json(category);
   } catch (e) {
     res.status(404).json({ error: "An error occured." });
   }
