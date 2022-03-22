@@ -5,7 +5,11 @@ const Disease = require("../models/Disease");
  * @param {*} req
  * @param {*} res
  */
-exports.getAll = async (req, res) => {
+exports.diseases = async (req, res) => {
+  // #swagger.tags = ['Disease']
+  /* #swagger.responses[200] = { 
+               schema: { $ref: "#/definitions/Diseases" },
+      } */
   try {
     const diseases = await Disease.findAll();
 
@@ -20,7 +24,11 @@ exports.getAll = async (req, res) => {
  * @param {*} req
  * @param {*} res
  */
-exports.getById = async (req, res) => {
+exports.details = async (req, res) => {
+  // #swagger.tags = ['Disease']
+  /* #swagger.responses[200] = { 
+               schema: { $ref: "#/definitions/Disease" },
+      } */
   try {
     const id = req.params.id;
     const disease = await Disease.findByPk(id);
@@ -39,6 +47,10 @@ exports.getById = async (req, res) => {
  * @param {*} res
  */
 exports.create = async (req, res) => {
+  // #swagger.tags = ['Disease']
+  /* #swagger.responses[200] = { 
+               schema: { $ref: "#/definitions/Disease" },
+      } */
   try {
     const disease = await Disease.create(req.body);
 
@@ -54,6 +66,10 @@ exports.create = async (req, res) => {
  * @param {*} res
  */
 exports.update = async (req, res) => {
+  // #swagger.tags = ['Disease']
+  /* #swagger.responses[200] = { 
+               schema: { $ref: "#/definitions/Disease" },
+      } */
   const id = req.params.id;
 
   try {
@@ -71,6 +87,8 @@ exports.update = async (req, res) => {
  * @param {*} res
  */
 exports.delete = async (req, res) => {
+  // #swagger.tags = ['Disease']
+
   const id = req.params.id;
 
   try {

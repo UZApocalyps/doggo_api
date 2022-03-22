@@ -5,7 +5,11 @@ const Consultation = require("../models/Consultation");
  * @param {*} req
  * @param {*} res
  */
-exports.getAll = async (req, res) => {
+exports.consultations = async (req, res) => {
+  // #swagger.tags = ['Consultation']
+    /* #swagger.responses[200] = { 
+               schema: { $ref: "#/definitions/Consultations" },
+      } */
   try {
     const consultations = await Consultation.findAll();
 
@@ -20,7 +24,12 @@ exports.getAll = async (req, res) => {
  * @param {*} req
  * @param {*} res
  */
-exports.getById = async (req, res) => {
+exports.details = async (req, res) => {
+  // #swagger.tags = ['Consultation']
+    /* #swagger.responses[200] = { 
+               schema: { $ref: "#/definitions/Consultation" },
+      } */
+
   try {
     const id = req.params.id;
     const consultation = await Consultation.findByPk(id);
@@ -39,6 +48,10 @@ exports.getById = async (req, res) => {
  * @param {*} res
  */
 exports.create = async (req, res) => {
+  // #swagger.tags = ['Consultation']
+    /* #swagger.responses[200] = { 
+               schema: { $ref: "#/definitions/Consultation" },
+      } */
   try {
     const consultation = await Consultation.create(req.body);
 
@@ -54,6 +67,10 @@ exports.create = async (req, res) => {
  * @param {*} res
  */
 exports.update = async (req, res) => {
+  // #swagger.tags = ['Consultation']
+    /* #swagger.responses[200] = { 
+               schema: { $ref: "#/definitions/Consultation" },
+      } */
   const id = req.params.id;
 
   try {
@@ -73,6 +90,7 @@ exports.update = async (req, res) => {
  * @param {*} res
  */
 exports.delete = async (req, res) => {
+  // #swagger.tags = ['Consultation']
   const id = req.params.id;
 
   try {

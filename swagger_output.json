@@ -148,6 +148,121 @@
         }
       }
     },
+    "/categories/": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Categories"
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Category"
+        ],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Categories"
+            },
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/categories/{id}": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Category"
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Category"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Category"
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Category"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
     "/clients/": {
       "get": {
         "tags": [
@@ -259,11 +374,17 @@
     },
     "/consultations/": {
       "get": {
+        "tags": [
+          "Consultation"
+        ],
         "description": "",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Consultations"
+            }
           },
           "404": {
             "description": "Not Found"
@@ -271,9 +392,18 @@
         }
       },
       "post": {
+        "tags": [
+          "Consultation"
+        ],
         "description": "",
         "parameters": [],
         "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Consultation"
+            },
+            "description": "OK"
+          },
           "201": {
             "description": "Created"
           },
@@ -285,6 +415,9 @@
     },
     "/consultations/{id}": {
       "get": {
+        "tags": [
+          "Consultation"
+        ],
         "description": "",
         "parameters": [
           {
@@ -296,7 +429,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Consultation"
+            }
           },
           "404": {
             "description": "Not Found"
@@ -304,6 +440,9 @@
         }
       },
       "patch": {
+        "tags": [
+          "Consultation"
+        ],
         "description": "",
         "parameters": [
           {
@@ -311,41 +450,14 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "situation": {
-                  "example": "any"
-                },
-                "goal": {
-                  "example": "any"
-                },
-                "deadline": {
-                  "example": "any"
-                },
-                "solution": {
-                  "example": "any"
-                },
-                "medicines": {
-                  "example": "any"
-                },
-                "argumentation": {
-                  "example": "any"
-                },
-                "id_service": {
-                  "example": "any"
-                }
-              }
-            }
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Consultation"
+            }
           },
           "404": {
             "description": "Not Found"
@@ -353,6 +465,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Consultation"
+        ],
         "description": "",
         "parameters": [
           {
@@ -374,11 +489,17 @@
     },
     "/diseases/": {
       "get": {
+        "tags": [
+          "Disease"
+        ],
         "description": "",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Diseases"
+            }
           },
           "404": {
             "description": "Not Found"
@@ -386,9 +507,18 @@
         }
       },
       "post": {
+        "tags": [
+          "Disease"
+        ],
         "description": "",
         "parameters": [],
         "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Disease"
+            },
+            "description": "OK"
+          },
           "201": {
             "description": "Created"
           },
@@ -400,6 +530,9 @@
     },
     "/diseases/{id}": {
       "get": {
+        "tags": [
+          "Disease"
+        ],
         "description": "",
         "parameters": [
           {
@@ -411,7 +544,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Disease"
+            }
           },
           "404": {
             "description": "Not Found"
@@ -419,6 +555,9 @@
         }
       },
       "patch": {
+        "tags": [
+          "Disease"
+        ],
         "description": "",
         "parameters": [
           {
@@ -426,41 +565,14 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "noun": {
-                  "example": "any"
-                },
-                "description": {
-                  "example": "any"
-                },
-                "symptoms": {
-                  "example": "any"
-                },
-                "preventive": {
-                  "example": "any"
-                },
-                "curative": {
-                  "example": "any"
-                },
-                "vaccinable": {
-                  "example": "any"
-                },
-                "zoonosis": {
-                  "example": "any"
-                }
-              }
-            }
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Disease"
+            }
           },
           "404": {
             "description": "Not Found"
@@ -468,6 +580,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Disease"
+        ],
         "description": "",
         "parameters": [
           {
@@ -489,20 +604,32 @@
     },
     "/dogs/": {
       "get": {
+        "tags": [
+          "Dog"
+        ],
         "description": "",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Dogs"
+            }
           }
         }
       },
       "post": {
+        "tags": [
+          "Dog"
+        ],
         "description": "",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Dog"
+            }
           },
           "400": {
             "description": "Bad Request"
@@ -512,6 +639,9 @@
     },
     "/dogs/{id}": {
       "get": {
+        "tags": [
+          "Dog"
+        ],
         "description": "",
         "parameters": [
           {
@@ -523,7 +653,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Dog"
+            }
           },
           "404": {
             "description": "Not Found"
@@ -531,6 +664,9 @@
         }
       },
       "put": {
+        "tags": [
+          "Dog"
+        ],
         "description": "",
         "parameters": [
           {
@@ -542,7 +678,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Dog"
+            }
           },
           "400": {
             "description": "Bad Request"
@@ -550,6 +689,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Dog"
+        ],
         "description": "",
         "parameters": [
           {
@@ -562,6 +704,121 @@
         "responses": {
           "500": {
             "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/services/": {
+      "get": {
+        "tags": [
+          "Service"
+        ],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Services"
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Service"
+        ],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Service"
+            },
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/services/{id}": {
+      "get": {
+        "tags": [
+          "Service"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Service"
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Service"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Service"
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Service"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }
@@ -783,6 +1040,341 @@
         "life_expectancy": {
           "type": "number",
           "example": 13
+        }
+      }
+    },
+    "Categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "example": 1
+          },
+          "noun": {
+            "type": "string",
+            "example": "Chiens de berger et de bouvier"
+          }
+        }
+      }
+    },
+    "Category": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 1
+        },
+        "noun": {
+          "type": "string",
+          "example": "Chiens de berger et de bouvier"
+        }
+      }
+    },
+    "Consultations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "example": 1
+          },
+          "situation": {
+            "type": "string",
+            "example": "Le chien est peureux et fait des agressions défensives (humain/chien). Il fait également des agressions de distancement (humain/chien) en vue de se protéger ainsi que sa propriétaire. Le chien a un sentiment de possession/contrôle sur sa propriétaire. Il prend du Clomicalme depuis 2 ans à trop faible dosage."
+          },
+          "goal": {
+            "type": "string",
+            "example": "Comprendre les raisons. Mieux savoir gérer les situations et diminuer les agressions sur les humains."
+          },
+          "deadline": {
+            "type": "string",
+            "example": "Ca prendra le temps qu'il faudra."
+          },
+          "solution": {
+            "type": "string",
+            "example": "J. DeHasse recommande d'arrêter le clomicalme et de commencer un traitement test d'hormones thyroïdiennes. Pour le comportement, rediriger l'agression sur le promeneur avec une séquence d'exercices. De plus, on réduira ou supprimera les rations de nourriture 'gratuite' afin de les distribuer durant les exercices de redirection."
+          },
+          "medicines": {
+            "type": "string",
+            "example": "Hormones thyroïdiennes et vitamine D3"
+          },
+          "argumentation": {
+            "type": "string",
+            "example": "Le Clomiclame est un médicament qui diminue l'agressivité mais qui ne fait rien contre la peur. De plus, il est mal dosé (1mg/10kg au lieu de 4mg). De plus, le chien présentant 5 points sur le tests de l'hypothyroïdie. Supprimer le clomicalme et le remplacer par des hormones thyroïdiennes pourrait améliorer l'équilibre émotionnel du chien. Cependant, la médication seule ne suffit pas pour améliorer la situation vis-à-vis des agressions. De plus car le chien a pris plaisir à le faire. Il se sent moins mal et à moins peur en persécutant les autres. Afin de rediriger les agressions, on demandera au chien de regarder le promeneur et, une fois l'attention du chien pris, continuer par des exercices ludiques et motivants avec récompense. Le but étant de donner la ration journalière de nourriture durant ses exercices. De cette manière, on arrivera à augmenter la motivation ainsi que la durée des exercices. Le but final étant de créer un reflexe chez le chien. Au lieu d'agresser lorsqu'il verra des gens, il aura envie de travailler avec le promeneur. Ce reflexe pourra être atteint dès 7 jours si aucun échec mais devra être maintenu au minimum durant 6 semaines afin d'être installé au niveau cérébral. Ce nouveau rituel sera ensuite installé et devra être poursuivi afin que le chien ne redirige pas ce rituel vers autre chose à nouveau."
+          },
+          "id_service": {
+            "type": "number",
+            "example": 1
+          }
+        }
+      }
+    },
+    "Consultation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 1
+        },
+        "situation": {
+          "type": "string",
+          "example": "Le chien est peureux et fait des agressions défensives (humain/chien). Il fait également des agressions de distancement (humain/chien) en vue de se protéger ainsi que sa propriétaire. Le chien a un sentiment de possession/contrôle sur sa propriétaire. Il prend du Clomicalme depuis 2 ans à trop faible dosage."
+        },
+        "goal": {
+          "type": "string",
+          "example": "Comprendre les raisons. Mieux savoir gérer les situations et diminuer les agressions sur les humains."
+        },
+        "deadline": {
+          "type": "string",
+          "example": "Ca prendra le temps qu'il faudra."
+        },
+        "solution": {
+          "type": "string",
+          "example": "J. DeHasse recommande d'arrêter le clomicalme et de commencer un traitement test d'hormones thyroïdiennes. Pour le comportement, rediriger l'agression sur le promeneur avec une séquence d'exercices. De plus, on réduira ou supprimera les rations de nourriture 'gratuite' afin de les distribuer durant les exercices de redirection."
+        },
+        "medicines": {
+          "type": "string",
+          "example": "Hormones thyroïdiennes et vitamine D3"
+        },
+        "argumentation": {
+          "type": "string",
+          "example": "Le Clomiclame est un médicament qui diminue l'agressivité mais qui ne fait rien contre la peur. De plus, il est mal dosé (1mg/10kg au lieu de 4mg). De plus, le chien présentant 5 points sur le tests de l'hypothyroïdie. Supprimer le clomicalme et le remplacer par des hormones thyroïdiennes pourrait améliorer l'équilibre émotionnel du chien. Cependant, la médication seule ne suffit pas pour améliorer la situation vis-à-vis des agressions. De plus car le chien a pris plaisir à le faire. Il se sent moins mal et à moins peur en persécutant les autres. Afin de rediriger les agressions, on demandera au chien de regarder le promeneur et, une fois l'attention du chien pris, continuer par des exercices ludiques et motivants avec récompense. Le but étant de donner la ration journalière de nourriture durant ses exercices. De cette manière, on arrivera à augmenter la motivation ainsi que la durée des exercices. Le but final étant de créer un reflexe chez le chien. Au lieu d'agresser lorsqu'il verra des gens, il aura envie de travailler avec le promeneur. Ce reflexe pourra être atteint dès 7 jours si aucun échec mais devra être maintenu au minimum durant 6 semaines afin d'être installé au niveau cérébral. Ce nouveau rituel sera ensuite installé et devra être poursuivi afin que le chien ne redirige pas ce rituel vers autre chose à nouveau."
+        },
+        "id_service": {
+          "type": "number",
+          "example": 1
+        }
+      }
+    },
+    "Diseases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "example": 1
+          },
+          "noun": {
+            "type": "string",
+            "example": "Anémie du chien"
+          },
+          "description": {
+            "type": "string",
+            "example": "L’anémie chez le chien est une pathologie due à la baisse du taux sanguin d’hémoglobine.\n\nCette insuffisance de globule rouge entraine une mauvaise libération de l’oxygène dans l’organisme.\n\nOn distingue 2 types d’anémie :\n\nL’anémie non régénérative consécutive à une baisse de production d’hémoglobine, provoquée soit par une affection de la moelle osseuse, une affection systémique (insuffisance rénale, insuffisance immunitaire, problème de thyroïde …etc.) ou encore un déficit en fer, protéines ou vitamine B12.\nL’anémie régénérative due à une destruction des globules rouges et provoquée par soit une hémorragie, une infestation de parasites, un ulcère de l’intestin, une inflammation du système immunitaire, une tumeur sanglante d’un organe, une intervention chirurgicale, un traumatisme ou une ingestion de produit toxique.\n\nTrès important : En cas de moindre doute, allez consulter votre vétérinaire rapidement."
+          },
+          "symptoms": {
+            "type": "string",
+            "example": "Perte de poids\nManque d’appétit\nAbattement\nPouls faible\nFatigue inhabituelle\nPâleur des muqueuses de la bouche, des yeux, des parties génitales\nRalentissement du rythme cardiaque\nRalentissement de la fréquence respiratoire"
+          },
+          "preventive": {
+            "type": "string",
+            "example": "Il n’y a pas de traitement préventif hormis donner une alimentation très équilibrée en vitamines et protéines ainsi qu’un traitement anti parasitaire régulier afin d’éviter la présence inopportune de parasites, que ce soit sous forme de vermifuge et de solutions externes (collier, pipette)."
+          },
+          "curative": {
+            "type": "string",
+            "example": "Le traitement sera prescrit en fonction de la cause de cette anémie.\n\nUn prélèvement sanguin sera automatiquement effectué afin de déterminer le taux d’hémoglobine et de définir au plus tôt la cause et l’importance de l’anémie.\n\nEn fonction du diagnostic, un traitement soit antiparasitaire, soit antibiotique, soit de soutien lors d’une maladie rénale pourront être prescrit.\n\nDans les cas les moins graves, un rééquilibrage alimentaire sera conseillé avec des compléments alimentaires appropriés.\n\nLe cas d’urgence souvent d’origine hémorragique, sera traité par une transfusion sanguine qui reste une intervention non négligeable et à prendre avec beaucoup de précaution."
+          },
+          "vaccinable": {
+            "type": "boolean",
+            "example": false
+          },
+          "zoonosis": {
+            "type": "boolean",
+            "example": false
+          }
+        }
+      }
+    },
+    "Disease": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 1
+        },
+        "noun": {
+          "type": "string",
+          "example": "Anémie du chien"
+        },
+        "description": {
+          "type": "string",
+          "example": "L’anémie chez le chien est une pathologie due à la baisse du taux sanguin d’hémoglobine.\n\nCette insuffisance de globule rouge entraine une mauvaise libération de l’oxygène dans l’organisme.\n\nOn distingue 2 types d’anémie :\n\nL’anémie non régénérative consécutive à une baisse de production d’hémoglobine, provoquée soit par une affection de la moelle osseuse, une affection systémique (insuffisance rénale, insuffisance immunitaire, problème de thyroïde …etc.) ou encore un déficit en fer, protéines ou vitamine B12.\nL’anémie régénérative due à une destruction des globules rouges et provoquée par soit une hémorragie, une infestation de parasites, un ulcère de l’intestin, une inflammation du système immunitaire, une tumeur sanglante d’un organe, une intervention chirurgicale, un traumatisme ou une ingestion de produit toxique.\n\nTrès important : En cas de moindre doute, allez consulter votre vétérinaire rapidement."
+        },
+        "symptoms": {
+          "type": "string",
+          "example": "Perte de poids\nManque d’appétit\nAbattement\nPouls faible\nFatigue inhabituelle\nPâleur des muqueuses de la bouche, des yeux, des parties génitales\nRalentissement du rythme cardiaque\nRalentissement de la fréquence respiratoire"
+        },
+        "preventive": {
+          "type": "string",
+          "example": "Il n’y a pas de traitement préventif hormis donner une alimentation très équilibrée en vitamines et protéines ainsi qu’un traitement anti parasitaire régulier afin d’éviter la présence inopportune de parasites, que ce soit sous forme de vermifuge et de solutions externes (collier, pipette)."
+        },
+        "curative": {
+          "type": "string",
+          "example": "Le traitement sera prescrit en fonction de la cause de cette anémie.\n\nUn prélèvement sanguin sera automatiquement effectué afin de déterminer le taux d’hémoglobine et de définir au plus tôt la cause et l’importance de l’anémie.\n\nEn fonction du diagnostic, un traitement soit antiparasitaire, soit antibiotique, soit de soutien lors d’une maladie rénale pourront être prescrit.\n\nDans les cas les moins graves, un rééquilibrage alimentaire sera conseillé avec des compléments alimentaires appropriés.\n\nLe cas d’urgence souvent d’origine hémorragique, sera traité par une transfusion sanguine qui reste une intervention non négligeable et à prendre avec beaucoup de précaution."
+        },
+        "vaccinable": {
+          "type": "boolean",
+          "example": false
+        },
+        "zoonosis": {
+          "type": "boolean",
+          "example": false
+        }
+      }
+    },
+    "Dogs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "example": 2
+          },
+          "noun": {
+            "type": "string",
+            "example": "Lucas"
+          },
+          "female": {
+            "type": "boolean",
+            "example": false
+          },
+          "birthdate": {
+            "type": "string",
+            "example": "2013-06-01"
+          },
+          "sterilized": {
+            "type": "boolean",
+            "example": true
+          },
+          "chemical": {
+            "type": "boolean",
+            "example": false
+          },
+          "color": {},
+          "dead": {
+            "type": "boolean",
+            "example": false
+          },
+          "id_client": {
+            "type": "number",
+            "example": 2
+          },
+          "breed": {
+            "type": "number",
+            "example": 24
+          },
+          "crossbreed": {
+            "type": "number",
+            "example": 338
+          }
+        }
+      }
+    },
+    "Dog": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 2
+        },
+        "noun": {
+          "type": "string",
+          "example": "Lucas"
+        },
+        "female": {
+          "type": "boolean",
+          "example": false
+        },
+        "birthdate": {
+          "type": "string",
+          "example": "2013-06-01"
+        },
+        "sterilized": {
+          "type": "boolean",
+          "example": true
+        },
+        "chemical": {
+          "type": "boolean",
+          "example": false
+        },
+        "color": {},
+        "dead": {
+          "type": "boolean",
+          "example": false
+        },
+        "id_client": {
+          "type": "number",
+          "example": 2
+        },
+        "breed": {
+          "type": "number",
+          "example": 24
+        },
+        "crossbreed": {
+          "type": "number",
+          "example": 338
+        }
+      }
+    },
+    "Services": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "example": 1
+          },
+          "moment": {
+            "type": "string",
+            "example": "2019-02-03"
+          },
+          "duration": {
+            "type": "number",
+            "example": 1
+          },
+          "type": {
+            "type": "string",
+            "example": "Consultation"
+          },
+          "description": {},
+          "street": {},
+          "id_locality": {
+            "type": "number",
+            "example": 3293
+          }
+        }
+      }
+    },
+    "Service": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 1
+        },
+        "moment": {
+          "type": "string",
+          "example": "2019-02-03"
+        },
+        "duration": {
+          "type": "number",
+          "example": 1
+        },
+        "type": {
+          "type": "string",
+          "example": "Consultation"
+        },
+        "description": {},
+        "street": {},
+        "id_locality": {
+          "type": "number",
+          "example": 3293
         }
       }
     }

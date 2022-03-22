@@ -6,7 +6,6 @@ exports.clients = async function (req, res) {
                schema: { $ref: "#/definitions/Clients" },
   } */
   const clients = await Client.findAll();
-  
   res.send(clients);
 };
 exports.details = async function (req, res) {
