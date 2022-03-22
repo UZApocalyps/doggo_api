@@ -18,5 +18,11 @@
   },
   "devDependencies": {
     "sequelize-cli": "^6.4.1"
-  }
+  },
+  "name": "cpnv-doggo-api",
+    "description": "Doggo API",
+    "version": "1.0.0",
+    "engines": {
+      "node": "16.x"
+    }
 }
