@@ -33,13 +33,13 @@ app.use("/doc", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 app.use(express.json()); // In order to parse requests json body
 
-app.use("/consultations", consultationsRouter);
-app.use("/diseases", diseasesRouter);
-app.use("/clients", clientRouter);
-app.use("/dogs", dogRouter);
-app.use("/categories", categoriesRouter);
-app.use("/breeds", breedRouter);
-app.use("/services", servicesRouter);
+app.use("/", consultationsRouter);
+app.use("/", diseasesRouter);
+app.use("/", clientRouter);
+app.use("/", dogRouter);
+app.use("/", categoriesRouter);
+app.use("/", breedRouter);
+app.use("/", servicesRouter);
 
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);

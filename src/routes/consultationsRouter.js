@@ -3,10 +3,10 @@ var router = express.Router();
 
 var consultationsController = require("../controllers/consultationsController");
 
-router.get("/", consultationsController.getAll);
-router.get("/:id", consultationsController.getById);
-router.post("/", consultationsController.create);
-router.patch("/:id", consultationsController.update);
-router.delete("/:id", consultationsController.delete);
+router.get("/consultations/", consultationsController.getAll);
+router.get("/consultations/:id", consultationsController.getById);
+router.post("/consultations/", consultationsController.create);
+router.patch("/consultations/:id", consultationsController.update);
+router.delete("/consultations/:id", consultationsController.delete);
 
 module.exports = router;
