@@ -6,15 +6,15 @@ var breed_controller = require('../controllers/breedController');
 
 /// Client ///
 
-router.get('/', breed_controller.breeds);
+router.get('/breeds/', breed_controller.breeds);
 
-router.get('/:id',breed_controller.details);
+router.get('/breeds/:id',breed_controller.details);
 
-router.put('/:id',breed_controller.update);
+router.put('/breeds/:id',breed_controller.update);
 
-router.post('/',breed_controller.create);
+router.post('/breeds/',breed_controller.create);
 
-router.delete('/:id',breed_controller.delete);
+router.delete('/breeds/:id',breed_controller.delete);
 
 
 module.exports = router;
