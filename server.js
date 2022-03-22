@@ -16,9 +16,13 @@ const categoriesRouter = require("./src/routes/categoriesRouter");
 const breedRouter = require("./src/routes/breedRouter");
 const servicesRouter = require("./src/routes/servicesRouter");
 
-app.use("/doc", swaggerUi.serve, swaggerUi.setup(swaggerFile));
-
 app.use(express.json()); // In order to parse requests json body
+
+app.get("/", (req, res) => {
+  res.status(200).json("Doggo API");
+});
+
+app.use("/doc", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 app.use("/consultations", consultationsRouter);
 app.use("/diseases", diseasesRouter);
