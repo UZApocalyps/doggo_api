@@ -22,10 +22,16 @@ git clone https://github.com/gabrielrossier/doggo_api.git
 
 - Add some data using the remaining files. (optional)
 
+### Install dependencies
+
+```bash
+npm i
+```
+
 ## Run the API
 
 ```bash
 npm start
 ```
 
-The API can now be accessed using `http://localhost:3000` on your browser.
+The API can now be accessed using `http://localhost:80` on your browser.
