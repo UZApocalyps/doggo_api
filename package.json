@@ -1,8 +1,28 @@
 {
+  "scripts": {
+    "start": "node server.js",
+    "swagger-autogen": "node swagger.js"
+  },
   "dependencies": {
-    "dotenv": "^15.0.0",
+    "-": "^0.0.1",
+    "dotenv": "^15.0.1",
     "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
     "mariadb": "^2.5.5",
-    "sequelize": "^6.15.0"
-  }
+    "mysql2": "^2.3.3",
+    "save": "^2.4.0",
+    "sequelize": "^6.15.0",
+    "sequelize-auto": "^0.8.8",
+    "swagger-autogen": "^2.19.0",
+    "swagger-ui-express": "^4.3.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.4.1"
+  },
+  "name": "cpnv-doggo-api",
+    "description": "Doggo API",
+    "version": "1.0.0",
+    "engines": {
+      "node": "16.x"
+    }
 }
